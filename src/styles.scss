@@ -17,12 +17,15 @@ $headings-color: $mi-color-titulos;
 $body-bg: $mi-color-fondo-body;
 $body-color: $mi-color-texto-body;
 
-$btn-border-radius: 1.5rem; // Hace todos los botones más redondeados
-$btn-font-weight: 600;      // Hace el texto de todos los botones más grueso
-$btn-padding-y: 0.45rem;    // Hace todos los botones más altos
+$btn-border-radius: 1.5rem;
+$btn-font-weight: 600;
+$btn-padding-y: 0.45rem;
 $btn-padding-x: 1rem;
 
-// 4. Importa el SASS de Bootstrap (¡al final!)
-// Esto compilará todo Bootstrap usando TUS variables.
+html {
+  scroll-behavior: smooth;
+}
+
+
 @import "bootstrap/scss/bootstrap";
 
