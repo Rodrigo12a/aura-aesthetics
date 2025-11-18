@@ -1,0 +1,31 @@
+@media (max-width: 991.98px) {
+            .navbar-nav .nav-item {
+                margin-bottom: 0.5rem;
+            }
+            .navbar-collapse .btn {
+                width: 100%;
+                margin-top: 0.5rem;
+            }
+        }
+nav a.active {
+    color: #000000;
+}
+:host {
+  /* Se aplica a la etiqueta <nav> dentro de este componente */
+  .navbar.sticky-top {
+
+    /* 1. Color de fondo semi-transparente (blanco al 70%) */
+    /* Puedes jugar con el 0.7 (70%) para hacerlo más o menos transparente */
+    background-color: rgba(255, 255, 255, 0.3);
+
+    /* 2. El efecto "Glass" (desenfoca lo que está detrás) */
+    /* Un valor estándar es 10px, ajústalo a tu gusto */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Para compatibilidad con Safari */
+
+    /* 3. La sombra sutil que ya tenías (se mantiene) */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+
+  /* ...El resto de tus estilos... */
+}

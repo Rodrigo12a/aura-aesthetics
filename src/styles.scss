@@ -1,0 +1,28 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&display=swap');
+
+$mi-color-primario: #c08658;
+$mi-color-secundario: #48454b;
+$mi-fuente-base: 'Montserrat', sans-serif;
+$mi-fuente-titulos: 'Baskervville', serif;
+$mi-color-titulos: #48454b;
+$mi-color-fondo-body: #fcf6f2; // (Ej: Un gris muy claro)
+$mi-color-texto-body: #c08658;
+
+$primary: $mi-color-primario;
+$secondary: $mi-color-secundario;
+$font-family-base: $mi-fuente-base;
+$headings-font-family: $mi-fuente-titulos;
+$headings-color: $mi-color-titulos;
+$body-bg: $mi-color-fondo-body;
+$body-color: $mi-color-texto-body;
+
+$btn-border-radius: 1.5rem; // Hace todos los botones más redondeados
+$btn-font-weight: 600;      // Hace el texto de todos los botones más grueso
+$btn-padding-y: 0.45rem;    // Hace todos los botones más altos
+$btn-padding-x: 1rem;
+
+// 4. Importa el SASS de Bootstrap (¡al final!)
+// Esto compilará todo Bootstrap usando TUS variables.
+@import "bootstrap/scss/bootstrap";
+

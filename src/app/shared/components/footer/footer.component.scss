@@ -1,0 +1,55 @@
+:host {
+  /* 1. Ponemos el componente como un bloque para que ocupe espacio */
+  display: block;
+
+  /* 2. Aplicamos tu color de fondo deseado */
+  background-color: #48454b;
+
+  /* 3. Aplicamos el color de texto blanco a TODO el componente */
+  /* Esto será heredado por todos los elementos hijos */
+  color: #ffffff;
+}
+:host h5 {
+  color: #ffffff;
+}
+
+/* * Hacemos lo mismo para los párrafos (por si acaso)
+ */
+:host p {
+  color: #ffffff;
+}
+
+/* * Y lo más importante, los enlaces <a>.
+ * Esto anulará el color de 'text-body-secondary' o cualquier otro.
+ */
+:host a {
+  color: #ffffff;
+}
+
+/* * (Opcional) Puedes hacer que los enlaces cambien de color
+ * un poco al pasar el mouse sobre ellos.
+ */
+:host a:hover {
+  color: #f0f0f0; /* Un blanco un poco más opaco */
+}
+
+
+:host {
+  footer {
+    ul {
+      li {
+        a {
+          color: #ccc;
+          font-weight: 400;
+          text-decoration: none; /* Buena práctica para quitar subrayado */
+          transition: color 0.3s ease; /* Hace el cambio suave */
+
+          /* El '&' hace referencia al elemento padre ('a') */
+          &:hover {
+            color: var(--color-blanco);
+          }
+        }
+      }
+    }
+  }
+}
