@@ -1,0 +1,23 @@
+.day-cell {
+min-height: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: 0.2s;
+}
+
+
+.day-cell:hover:not(.disabled-day) {
+background-color: rgba(0, 123, 255, 0.1);
+}
+
+
+.disabled-day {
+opacity: 0.4;
+pointer-events: none;
+}
+
+
+.reservar-cita-component .card {
+border-radius: 10px;
+}

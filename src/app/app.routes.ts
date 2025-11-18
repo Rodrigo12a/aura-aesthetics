@@ -7,6 +7,7 @@ import { MasajesCorporalesComponent } from './shared/pages/servicios/masajes-cor
 import { DepilacionComponent } from './shared/pages/servicios/depilacion/depilacion.component';
 import { CuidadoCorporalSolarComponent } from './shared/pages/productos/cuidado-corporal-solar/cuidado-corporal-solar.component';
 import { SkincareFacialComponent } from './shared/pages/productos/skincare-facial/skincare-facial.component';
+import { ReservarCitaComponent } from './shared/pages/reservar-cita/reservar-cita.component';
 
 export const routes: Routes = [
   {
@@ -40,5 +41,9 @@ export const routes: Routes = [
   {
     path: 'contacto',
     component: ContactoComponent,
+  },
+  {
+    path: 'reservar-cita',
+    component: ReservarCitaComponent
   }
 ];

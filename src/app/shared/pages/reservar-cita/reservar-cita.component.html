@@ -1,0 +1,99 @@
+<div class="container my-5">
+
+  <div class="row g-lg-4">
+
+    <div class="col-md-6 mb-4 mb-md-0">
+      <div class="card shadow-sm border-0">
+        <div class="card-body p-3">
+
+          <div class="d-flex justify-content-between mb-3 align-items-center">
+            <button class="btn btn-outline-secondary btn-sm" (click)="prevMonth()">&lt;</button>
+            <div class="fw-bold text-capitalize">{{ getLabel() }}</div>
+            <button class="btn btn-outline-secondary btn-sm" (click)="nextMonth()">&gt;</button>
+          </div>
+
+          <div class="row text-center fw-semibold small mb-2">
+            <div class="col" *ngFor="let d of weekdays">{{ d }}</div>
+          </div>
+
+          <div class="row" *ngFor="let week of weeks">
+            <div class="col p-1 text-center" *ngFor="let day of week">
+              <div
+                class="day-cell rounded p-2"
+                [ngClass]="{
+                  'bg-primary text-white': isToday(day),
+                  'bg-secondary text-white': selectedDate && day.toDateString() === selectedDate.toDateString(),
+                  'text-muted': !sameMonth(day)
+                }"
+                (click)="selectDate(day)"
+                [class.disabled-day]="day < today"
+                style="cursor: pointer;"
+              >
+                {{ day.getDate() }}
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card shadow-sm border-0">
+        <div class="card-body p-3">
+          <h5 class="fw-bold mb-3">Detalles de la Cita</h5>
+
+          <form [formGroup]="citaForm">
+
+            <div class="mb-3">
+              <label class="form-label">Servicio</label>
+              <select class="form-select" formControlName="servicio">
+                <option value="">Seleccione servicio</option>
+                <option *ngFor="let s of servicios" [value]="s.nombre">{{ s.nombre }}</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Profesional</label>
+              <select class="form-select" formControlName="estilista">
+                <option value="">Seleccione estilista</option>
+                <option *ngFor="let e of estilistas" [value]="e.nombre">{{ e.nombre }}</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Nombre</label>
+              <input type="text" class="form-control" formControlName="nombre">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" formControlName="email">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Método de pago</label>
+              <select class="form-select" formControlName="metodoPago">
+                <option value="">Seleccione</option>
+                <option *ngFor="let m of metodosPago">{{ m }}</option>
+              </select>
+            </div>
+
+            <button
+              class="btn btn-outline-primary w-100 mt-3"
+              [disabled]="!selectedDate || citaForm.invalid"
+              (click)="confirmarCita()"
+            >Confirmar Cita</button>
+
+            <div class="alert alert-danger mt-3" *ngIf="selectedDate">
+              Fecha seleccionada:
+              <strong>{{ selectedDate | date:'fullDate' }}</strong>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div> </div>
